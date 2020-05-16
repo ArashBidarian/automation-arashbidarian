@@ -10,8 +10,9 @@ describe('Regression test suite', function(){
         cy.title().should('include', 'Testers Hotel')
         // Assertion02
         cy.contains('Login')
+        
         //cy.get('div.field:nth-child(1) > input:nth-child(2)') Alternative 01
-        // Erite in Username "tester01"
+        // Write in Username "tester01"
         cy.get(':nth-child(1) > input').type('tester01')
         // User password
         cy.get(':nth-child(2) > input').type('GteteqbQQgSr88SwNExUQv2ydb7xuf8c')
