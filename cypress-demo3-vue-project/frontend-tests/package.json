@@ -13,5 +13,6 @@
   "devDependencies": {
     "cypress": "^4.5.0"
   },
+  "dependencies": {},
   "description": ""
 }
