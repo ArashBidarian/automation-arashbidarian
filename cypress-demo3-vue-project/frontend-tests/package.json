@@ -1,10 +1,10 @@
 {
   "name": "frontend-tests",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,5 +12,6 @@
   "license": "ISC",
   "devDependencies": {
     "cypress": "^4.5.0"
-  }
+  },
+  "description": ""
 }
