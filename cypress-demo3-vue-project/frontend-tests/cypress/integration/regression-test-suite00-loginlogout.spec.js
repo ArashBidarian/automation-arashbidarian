@@ -29,8 +29,6 @@ describe('Regression test suite', function(){
         // Assertion02
         cy.contains('Login')
 
-
-
     })
 
 })

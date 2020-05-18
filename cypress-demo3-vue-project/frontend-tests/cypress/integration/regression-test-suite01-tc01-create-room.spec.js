@@ -12,14 +12,15 @@ describe('Regression test suite', function(){
 
         cy.visit('http://localhost:3000')
 
+        // Extra Assertion 02
+        cy.title().should('include', 'Testers Hotel')
 
         //2. Assert that the page is correct
         //Login
         //The user is in the right page 
         cy.contains('Login')
 
-        // Extra Assertion 02
-        cy.title().should('include', 'Testers Hotel')
+
     
         //3. Inform/write the username
         //tester01
@@ -80,11 +81,7 @@ describe('Regression test suite', function(){
         //Floor 1, Room 1
         //The  Creation of Room is successful
         
-        
-
-       
-       
-
+    
         
         //15. Click the button ‘logout’.
         //The user exits the system is forwarded to the login page.
