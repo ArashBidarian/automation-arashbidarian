@@ -5,13 +5,23 @@ module.exports = {
     dashboardtitle: 'Tester Hotel Overview',
     indextitlelogin: 'Login',  
 
+
+
     roomsoverviewtitle: 'Rooms',
     clienstoverviewtitle: 'Clients',
     billsoverviewtitle: 'Bills',
     reservationsoverviewtitle: 'Reservations',
 
-    //createroomtile: 'New Room',
-    //createclienttitle: 'New Client',
+    createroomtile: 'New Room',
+    
+    createclienttitle: 'New Client',
+    newClientname: 'Arash Bidarian',
+    newClientEmail: 'arash@yahoo.se',
+    newClientTelefone: '123456789',
+
+
+
+
     //createbilltitle: 'New Bill',
     //createreservation: 'New Reservation',
 

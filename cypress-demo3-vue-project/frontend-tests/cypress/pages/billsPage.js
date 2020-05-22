@@ -3,10 +3,9 @@
 // elements
 //const titleOfDashboardPage = 'Testers Hotel'
 
-const titleOfRoomsPage = 'Rooms'
-const roomsOverviewPageButton = ':nth-child(1) > .btn'
+const titleOfBillsPage = 'Bills'
+const billsOverviewPageButton = ':nth-child(3) > .btn'
 const logoutButton = 'button.btn'   ////Dubbelkolla
-
 
 //const roomsOverviewPageButton = ':nth-child(1) > .btn'
 //const clientsOverviewpageButton = ':nth-child(2) > .btn'
@@ -17,15 +16,14 @@ const logoutButton = 'button.btn'   ////Dubbelkolla
 // actions/ functions
 //====================
 
-
-//Assertion 01 Rooms: check title of Rooms Page
-function checkTitleOfRoomsPage(cy){
+//Assertion 01 : check title of Bills Page
+function checkTitleOfBillsPage(cy){
     // f.01: Assertion
-    cy.title().should('eq', titleOfRoomsPage)
+    cy.title().should('eq', titleOfBillsPage)
 }
 
-function goToCreateRoomsPage (cy, contentToConfirm){
-    cy.get(roomsOverviewPageButton).click()
+function goToCreateBillsPage (cy, contentToConfirm){
+    cy.get(billsOverviewPageButton).click()
     cy.contains(contentToConfirm)
 }
 
@@ -36,8 +34,8 @@ function performLogout (cy, contentToConfirm){
 
 
 module.exports =  {
-    checkTitleOfRoomsPage,
-    goToCreateRoomsPage,
+    checkTitleOfBillsPage,
+    goToCreateBillsPage,
     performLogout
 
 }
