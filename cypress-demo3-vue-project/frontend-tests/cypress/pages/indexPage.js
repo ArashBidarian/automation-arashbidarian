@@ -9,6 +9,7 @@ const loginButton = '.btn'
 
 // actions/ functions
 //====================
+//Assertion right page
 function checkTitleOfIndexPage(cy){
     // f.01: Assertion
     cy.title().should('eq', titleOfIndexPage)

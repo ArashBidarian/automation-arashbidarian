@@ -21,10 +21,12 @@ describe('Test suite', function(){
     })
 
     // Test case 02: login > go to dashboard > go to rooms overview page > add room > logout
-// it('Perform login and logout', function(){
+    // it('Perform login and logout', function(){
  //       indexFuncs.performValidLogin(cy, targets.username, targets.password, targets.dashboardTitle)
 //        dashBoardFuncs.performLogout(cy, 'Login')
         
+
+
  //   })
 
 
