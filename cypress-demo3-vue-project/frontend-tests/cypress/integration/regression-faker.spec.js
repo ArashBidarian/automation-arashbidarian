@@ -16,11 +16,25 @@ describe('Test suite', function(){
     // Test case 01: login > go to dashboard > logout
     it('Perform login and logout', function(){
         indexFuncs.performValidLogin(cy, targets.username, targets.password, targets.dashboardtitle)
+        
+        dashBoardFuncs.goto
+        function goToRoomsOverviewPage (cy, contentToConfirm){
+            cy.get(roomsOverviewPageButton).click()
+            cy.contains(contentToConfirm)
+        }
+
+        
         dashBoardFuncs.performLogout(cy, targets.indextitlelogin)
         
     })
 
     // Test case 02: login > go to dashboard > go to rooms overview page > add room > logout
+ 
+
+
+
+
+
     // it('Perform login and logout', function(){
  //       indexFuncs.performValidLogin(cy, targets.username, targets.password, targets.dashboardTitle)
 //        dashBoardFuncs.performLogout(cy, 'Login')

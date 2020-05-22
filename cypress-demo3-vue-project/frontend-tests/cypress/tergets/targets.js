@@ -3,8 +3,20 @@ module.exports = {
     username: 'tester01',
     password: 'GteteqbQQgSr88SwNExUQv2ydb7xuf8c',    // Test case
     dashboardtitle: 'Tester Hotel Overview',
-    indextitlelogin: 'Login'  
-        
+    indextitlelogin: 'Login',  
+
+    roomsoverviewtitle: 'Rooms',
+    clienstoverviewtitle: 'Clients',
+    billsoverviewtitle: 'Bills',
+    reservationsoverviewtitle: 'Reservations',
+
+    //createroomtile: 'New Room',
+    //createclienttitle: 'New Client',
+    //createbilltitle: 'New Bill',
+    //createreservation: 'New Reservation',
+
+
+
   
     // username02: 'tester02',
     //password02: 'sppm7qncqmVft5uECkwjLcLdEJGzM3Cw',
