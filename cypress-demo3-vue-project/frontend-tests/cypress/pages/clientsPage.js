@@ -8,7 +8,7 @@ const titleOfClientsPage = 'Clients'
 const logoutButton = 'button.btn'   ////Dubbelkolla
 
 const createClientsButton = 'a.btn:nth-child(2)' 
-
+const logoutButtonClient = '.user > .btn'
 
 // actions/ functions
 //====================
@@ -26,7 +26,7 @@ function goToCreateClientPage (cy, contentToConfirm){
 }
 
 function performLogout (cy, contentToConfirm){
-    cy.get(logoutButton).click()
+    cy.get(logoutButtonClient).click()
     cy.contains(contentToConfirm)
 }
 

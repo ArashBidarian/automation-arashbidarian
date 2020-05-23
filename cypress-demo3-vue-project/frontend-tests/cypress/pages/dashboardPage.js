@@ -18,28 +18,33 @@ const reservationOverviewPageButton = ':nth-child(4) > .btn'
 function checkTitleOfDashboardPage(cy){
     // f.01: Assertion
     cy.title().should('eq', titleOfDashboardPage)
+    //cy.percySnapshot('Dashboard')
 }
 //Assertion 01 RoomsOverview Page: check title of rooms overview Page
 function goToRoomsOverviewPage (cy, contentToConfirm){
     cy.get(roomsOverviewPageButton).click()
     cy.contains(contentToConfirm)
+    cy.percySnapshot('Rooms Overview')
 }
 //Assertion 02 Clients Overview Page: check title of clients overview Page
 function goToClientsOverviewPage (cy, contentToConfirm){
     cy.get(clientsOverviewpageButton).click()
     cy.contains(contentToConfirm)
+    cy.percySnapshot('Clients Overview')
 }
 
 //Assertion 03 bills Overview Page: check title of clients overview Page
 function goToBillsOverviewPage (cy, contentToConfirm){
     cy.get(billsOverviewPageButton).click()
     cy.contains(contentToConfirm)
+    cy.percySnapshot('Bills Overview')
 }
 
 //Assertion 04 reservation Overview Page: check title of clients overview Page
 function goToReservationOverviewPage (cy, contentToConfirm){
     cy.get(reservationOverviewPageButton).click()
     cy.contains(contentToConfirm)
+    cy.percySnapshot('Reservations Overview')
 }
 
 

@@ -35,10 +35,11 @@ function createRoom (cy, newRoomCategory, newRoomNumber, newFloorNumber, newPric
     cy.get(newRoomsPriceField).type(newPrice)
     cy.get(newRoomsFeaturesField).type(newFeatures)
     cy.get(newRoomsSaveButton).click()
+    //Assert: kontrollera rummnummer
     cy.contains(contentToConfirm)
 }
 
-// availibility,
+
 function performLogout (cy, contentToConfirm){
     cy.get(logoutButton).click()
     cy.contains(contentToConfirm)

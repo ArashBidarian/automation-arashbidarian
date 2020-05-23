@@ -5,7 +5,7 @@ import faker from 'faker'
 const titleOfNewBillsPage = 'New Bill'
 
 const newBillsSaveButton = 'a.btn:nth-child(2)' 
-
+const billsOverviewlogoutbutton = 'a.btn:nth-child(2)'
 
 const newBillsValueField = 'div.field:nth-child(1) > input:nth-child(2)'
 const newBillsPaidCheckbox = '.checkbox'
@@ -19,18 +19,30 @@ function checkTitleOfNewBillsPage(cy){
 
 
 function createBill (cy, newValue, contentToConfirm){
-    cy.get(newBillsValueField).select(newValue)
-    cy.get(newBillPaidCheckButton).click()   
+    cy.get('input').type(faker.random.number({min:2000, max:4000}))  
+    cy.get('.checkbox').click() 
+    cy.get('.blue').click()
     cy.get(newBillsSaveButton).click()
-    //Assert: kontrollera rummnummer
+
     cy.contains(contentToConfirm)
 }
 
 
 function performLogout (cy, contentToConfirm){
-    cy.get(logoutButton).click()
+    cy.get(billsOverviewlogoutbutton).click()
     cy.contains(contentToConfirm)
 }
+
+
+//function createBill (cy, newValue, contentToConfirm){
+//    cy.get('input').type(faker.random.number({min:2000, max:4000}))  
+//    cy.get('.checkbox').click() 
+//    cy.get('.blue').click()
+//    cy.get(newBillsSaveButton).click()
+
+//    cy.contains(contentToConfirm)
+//}
+
 
 
 module.exports =  {

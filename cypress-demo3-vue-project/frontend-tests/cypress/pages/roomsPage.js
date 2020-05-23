@@ -5,7 +5,7 @@
 
 const titleOfRoomsPage = 'Rooms'
 //const roomsOverviewPageButton = ':nth-child(1) > .btn'
-const logoutButton = 'button.btn'   ////Dubbelkolla
+const logoutButton = '.user > .btn' 
 const createRoomsButton = 'h2 > .btn' 
 
 
