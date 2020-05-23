@@ -3,10 +3,13 @@
 import * as indexFuncs from '../pages/indexPage'
 import * as dashBoardFuncs from '../pages/dashboardPage'
 import * as roomsOverviewFuncs from '../pages/roomsPage'
+import * as newRoomFuncs from '../pages/newRoomPage'
 import * as clienOverviewFuncs from '../pages/clientsPage'
 import * as newClientFuncs from '../pages/newClientpage'
+import * as billsOverviewFuncs from '../pages/billsPage'
+import * as newBillsFuncs from '../pages/newBillPage'
 import * as targets from '../tergets/targets'
-
+import faker from 'faker'
 
 // Test suite 
 describe('Test suite', function(){
@@ -56,29 +59,39 @@ describe('Test suite', function(){
         dashBoardFuncs.performLogout(cy, targets.indextitlelogin)
     })
 
-    // Test case 06: login > go to dashboard > go to Rooms overview page > goto create room > Create a room &logout
-
+    // Test case 06: login > go to dashboard > go to Rooms overview page > goto create room > Create a room >assert with rummnumber & logout
     it('TC06: Go to Rooms Overview Page> goto create room & logout', function(){
         indexFuncs.performValidLogin(cy, targets.username, targets.password, targets.dashboardtitle)
-        dashBoardFuncs.goToRoomsOverviewPage(cy, targets.roomsoverviewtitle)
-        cy.contains(targets.roomsoverviewtitle)
-        roomsOverviewFuncs.goToCreateRoomsPage(cy, targets.createroomtile)
-
-        dashBoardFuncs.performLogout(cy, targets.indextitlelogin)
+        dashBoardFuncs.goToRoomsOverviewPage(cy, targets.roomsoverviewtitle) 
+        roomsOverviewFuncs.goToCreateRoomsPage(cy, targets.createroomtitle)
+        newRoomFuncs.createRoom(cy, targets.newRoomCategory, targets.newRoomNumber, targets.newFloorNumber, targets.newPrice, targets.newFeatures, targets.newRoomNumber)
+    
+       roomsOverviewFuncs.performLogout(cy, targets.indextitlelogin)
     })
 
-    // Test case 0: login > go to dashboard > go to Clients overview page > goto create Client > Create a Client &logout
+    // Test case 07: login > go to dashboard > go to Clients overview page > goto create Client > Create a Client &logout
 
     it('TC07: Go to Clients Overview Page> goto create client & logout', function(){
         indexFuncs.performValidLogin(cy, targets.username, targets.password, targets.dashboardtitle)
         dashBoardFuncs.goToClientsOverviewPage(cy, targets.clienstoverviewtitle)
         cy.contains(targets.clienstoverviewtitle)
         clienOverviewFuncs.goToCreateClientPage(cy, targets.createclienttitle)
-        newClientFuncs.createNewClient(cy, targets.newClientname, targets.newClientEmail, targets.newClientTelefone, targets.clienstoverviewtitle)
-
-
+        newClientFuncs.createNewClient(cy, targets.newClientname, targets.newClientEmail, targets.newClientTelefone, targets.newClientname)
         dashBoardFuncs.performLogout(cy, targets.indextitlelogin)
     })
+
+     // Test case 08: login > go to dashboard > go to Bills overview page > Create a bill & logout
+     it('TC08: Go to Bills Overview Page & logout', function(){
+        indexFuncs.performValidLogin(cy, targets.username, targets.password, targets.dashboardtitle)
+        dashBoardFuncs.goToBillsOverviewPage(cy, targets.billsoverviewtitle)
+        billsOverviewFuncs.goToCreateBillsPage(cy, 'New Bill')
+        cy.get('input').type(faker.random.number({min:2000, max:4000}))  
+        cy.get('.checkbox').click() 
+        cy.get('.blue').click()
+      
+
+    })
+
 
 
 

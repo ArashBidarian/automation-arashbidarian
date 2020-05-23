@@ -3,14 +3,12 @@
 // elements
 //const titleOfDashboardPage = 'Testers Hotel'
 
-const titleOfBillsPage = 'Bills'
-const billsOverviewPageButton = ':nth-child(3) > .btn'
+const titleOfBillsOverviewPage = 'Bills'
+const billsCreatePageButton = 'h2 > .btn'
+
 const logoutButton = 'button.btn'   ////Dubbelkolla
 
-//const roomsOverviewPageButton = ':nth-child(1) > .btn'
-//const clientsOverviewpageButton = ':nth-child(2) > .btn'
-//const billsOverviewPageButton = ':nth-child(3) > .btn'
-//const reservationOverviewPageButton = ':nth-child(4) > .btn' 
+
 
 
 // actions/ functions
@@ -19,11 +17,11 @@ const logoutButton = 'button.btn'   ////Dubbelkolla
 //Assertion 01 : check title of Bills Page
 function checkTitleOfBillsPage(cy){
     // f.01: Assertion
-    cy.title().should('eq', titleOfBillsPage)
+    cy.title().should('eq', titleOfBillsOverviewPage)
 }
 
 function goToCreateBillsPage (cy, contentToConfirm){
-    cy.get(billsOverviewPageButton).click()
+    cy.get(billsCreatePageButton).click()
     cy.contains(contentToConfirm)
 }
 

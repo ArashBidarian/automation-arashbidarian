@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "faker": "^4.1.0",
-    "mocha": "^5.2.0",
+    "mocha": "^7.1.2",
     "mochawesome": "^6.1.1",
     "mochawesome-merge": "^4.0.3"
   },

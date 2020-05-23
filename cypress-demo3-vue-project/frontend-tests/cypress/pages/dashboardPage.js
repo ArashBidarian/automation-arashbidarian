@@ -7,9 +7,9 @@ const logoutButton = '.user > .btn'
 
 const roomsOverviewPageButton = ':nth-child(1) > .btn'
 const clientsOverviewpageButton = '.blocks > :nth-child(2) > .btn'
-const billsOverviewPageButton = ':nth-child(3) > .btn'
+//const billsOverviewPageButton = ':nth-child(3) > .btn'
+const billsOverviewPageButton = 'div.block:nth-child(3) > a:nth-child(4)'
 const reservationOverviewPageButton = ':nth-child(4) > .btn' 
-
 
 // actions/ functions
 //====================

@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+import faker from 'faker' 
+
 // elements
 const titleOfNewClientsPage = 'New Client'
 
@@ -24,9 +26,7 @@ function goBackToClientOverviewPage (cy, contentToConfirm){
 
 
 
-
-
-function createNewClient (cy, newClientName, newClientEmail, newClientTelefone, contentToConfirm){
+function createNewClient (cy, newClientName, newClientEmail, newClientTelefone,contentToConfirm){
     cy.get(newClientNamefield).type(newClientName)
     cy.get(newClientEmailfield).type(newClientEmail)
     cy.get(newClientTelefonefield).type(newClientTelefone)
@@ -34,7 +34,6 @@ function createNewClient (cy, newClientName, newClientEmail, newClientTelefone, 
     cy.contains(contentToConfirm)
 
 }
-
 
 
 function performLogout (cy, contentToConfirm){

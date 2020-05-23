@@ -4,11 +4,9 @@
 //const titleOfDashboardPage = 'Testers Hotel'
 
 const titleOfRoomsPage = 'Rooms'
-const roomsOverviewPageButton = ':nth-child(1) > .btn'
+//const roomsOverviewPageButton = ':nth-child(1) > .btn'
 const logoutButton = 'button.btn'   ////Dubbelkolla
-const createRoomsButton = 'a.btn:nth-child(2)' 
-
-
+const createRoomsButton = 'h2 > .btn' 
 
 
 // actions/ functions
@@ -20,7 +18,7 @@ function checkTitleOfRoomsPage(cy){
     cy.title().should('eq', titleOfRoomsPage)
 }
 
-function goToCreateRoomsPage (cy, contentToConfirm){
+function goToCreateRoomsPage (cy, contentToConfirm){ 
     cy.get(createRoomsButton).click()
     cy.contains(contentToConfirm)
 }
