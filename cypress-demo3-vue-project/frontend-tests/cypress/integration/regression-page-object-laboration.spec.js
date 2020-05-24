@@ -8,7 +8,7 @@ import * as clienOverviewFuncs from '../pages/clientsPage'
 import * as newClientFuncs from '../pages/newClientpage'
 import * as billsOverviewFuncs from '../pages/billsPage'
 import * as newBillsFuncs from '../pages/newBillPage'
-import * as targets from '../tergets/targets'
+import * as targets from '../targets/targets'
 import faker from 'faker'
 
 // Test suite 
@@ -36,7 +36,7 @@ describe('Test suite', function(){
     })
 
     // Test case 03: login > go to dashboard > go to Clients overview page >  logout
-    it('TC03: Go to Clients Overview Page & logout', function(){
+    it.only('TC03: Go to Clients Overview Page & logout', function(){
         indexFuncs.performValidLogin(cy, targets.username, targets.password, targets.dashboardtitle)
         dashBoardFuncs.goToClientsOverviewPage(cy, targets.clienstoverviewtitle)
         cy.contains(targets.clienstoverviewtitle)
@@ -66,18 +66,18 @@ describe('Test suite', function(){
         roomsOverviewFuncs.goToCreateRoomsPage(cy, targets.createroomtitle)
         newRoomFuncs.createRoom(cy, targets.newRoomCategory, targets.newRoomNumber, targets.newFloorNumber, targets.newPrice, targets.newFeatures, targets.newRoomNumber)
     
-        roomsOverviewFuncs.performLogout(cy, targets.indextitlelogin)
+        roomsOverviewFuncs.performLogout(cy)
     })
 
     // Test case 07: login > go to dashboard > go to Clients overview page > goto create Client > Create a Client &logout
 
-    it('TC07: Go to Clients Overview Page> goto create client> CreateClient & logout', function(){
+    it.only('TC07: Go to Clients Overview Page> goto create client> CreateClient & logout', function(){
         indexFuncs.performValidLogin(cy, targets.username, targets.password, targets.dashboardtitle)
         dashBoardFuncs.goToClientsOverviewPage(cy, targets.clienstoverviewtitle)
         cy.contains(targets.clienstoverviewtitle)
-        clienOverviewFuncs.goToCreateClientPage(cy, targets.createclienttitle)
+        clienOverviewFuncs.goToCreateClientPage(cy)
         newClientFuncs.createNewClient(cy, targets.newClientname, targets.newClientEmail, targets.newClientTelefone, targets.newClientname)
-        newClientFuncs.performLogout(cy, targets.indextitlelogin)
+        clienOverviewFuncs.performLogout(cy)
     })
 
      // Test case 08: login > go to dashboard > go to Bills overview page > Create a bill & logout (provar att lägga här!)

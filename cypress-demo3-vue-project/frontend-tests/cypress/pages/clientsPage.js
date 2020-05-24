@@ -20,14 +20,14 @@ function checkTitleOfClientsPage(cy){
     cy.title().should('eq', titleOfClientsPage)
 }
 
-function goToCreateClientPage (cy, contentToConfirm){
+function goToCreateClientPage (cy){
     cy.get(createClientsButton).click()
-    cy.contains(contentToConfirm)
+    cy.contains('New Client')
 }
 
-function performLogout (cy, contentToConfirm){
-    cy.get(logoutButtonClient).click()
-    cy.contains(contentToConfirm)
+function performLogout (cy){
+    cy.get(logoutButton).click()
+    cy.contains('Login')
 }
 
 

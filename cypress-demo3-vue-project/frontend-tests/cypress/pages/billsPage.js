@@ -25,9 +25,9 @@ function goToCreateBillsPage (cy, contentToConfirm){
     cy.contains(contentToConfirm)
 }
 
-function performLogout (cy, contentToConfirm){
+function performLogout (cy){
     cy.get(logoutButton).click()
-    cy.contains(contentToConfirm)
+    cy.contains('Login')
 }
 
 

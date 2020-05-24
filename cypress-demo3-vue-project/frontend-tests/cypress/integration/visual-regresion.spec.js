@@ -8,7 +8,7 @@ import * as clienOverviewFuncs from '../pages/clientsPage'
 import * as newClientFuncs from '../pages/newClientpage'
 import * as billsOverviewFuncs from '../pages/billsPage'
 import * as newBillsFuncs from '../pages/newBillPage'
-import * as targets from '../tergets/targets'
+import * as targets from '../targets/targets'
 import faker from 'faker'
 
 // Test suite 
@@ -17,12 +17,13 @@ describe('Test suite', function(){
     beforeEach(()=>{
         cy.visit(targets.base_url)
         indexFuncs.checkTitleOfIndexPage(cy)
+        cy.percySnapshot('Login Page')
     })
     
     // Test case 01: login > go to dashboard > logout
     it('TC01: Perform login and logout', function(){
         indexFuncs.performValidLogin(cy, targets.username, targets.password, targets.dashboardtitle)
-        cy.percySnapshot('Dashboard')
+        cy.percySnapshot('Dashboard')    
         dashBoardFuncs.performLogout(cy, targets.indextitlelogin)
         cy.percySnapshot('Back to Login Page')
     })
@@ -30,15 +31,15 @@ describe('Test suite', function(){
     // Test case 02: login > go to dashboard > go to Rooms overview page > logout
 
     it('TC02: Go to Rooms Overview Page & logout', function(){
-
         indexFuncs.performValidLogin(cy, targets.username, targets.password, targets.dashboardtitle)
-        cy.percySnapshot('Dashboard')
+        cy.percySnapshot('Dashboard')       
         dashBoardFuncs.goToRoomsOverviewPage(cy, targets.roomsoverviewtitle)
         cy.contains(targets.roomsoverviewtitle)
         cy.percySnapshot('Rooms Overview')
         dashBoardFuncs.performLogout(cy, targets.indextitlelogin)
         cy.percySnapshot('Back to Login Page')
     })
+
 
     // Test case 03: login > go to dashboard > go to Clients overview page >  logout
     it('TC03: Go to Clients Overview Page & logout', function(){
@@ -68,9 +69,9 @@ describe('Test suite', function(){
         cy.percySnapshot('Dashboard')
         dashBoardFuncs.goToReservationOverviewPage(cy, targets.reservationsoverviewtitle)
         cy.contains(targets.reservationsoverviewtitle)
-        cy.percySnapshot('Reservation Overview')
+        cy.percySnapshot('Reservation Overview')        
         dashBoardFuncs.performLogout(cy, targets.indextitlelogin)
-        cy.percySnapshot('Back to Login Page')
+        cy.percySnapshot('Back to Login Page')   
     })
 
     // Test case 06: login > go to dashboard > go to Rooms overview page > goto create room > Create a room >assert with rummnumber & logout
@@ -83,7 +84,7 @@ describe('Test suite', function(){
         cy.percySnapshot('Create Rooms page')
         newRoomFuncs.createRoom(cy, targets.newRoomCategory, targets.newRoomNumber, targets.newFloorNumber, targets.newPrice, targets.newFeatures, targets.newRoomNumber)
         cy.percySnapshot('Rooms Overview')
-        roomsOverviewFuncs.performLogout(cy, targets.indextitlelogin)
+        roomsOverviewFuncs.performLogout(cy)
         cy.percySnapshot('Back to Login Page')
     })
 
@@ -95,11 +96,11 @@ describe('Test suite', function(){
         dashBoardFuncs.goToClientsOverviewPage(cy, targets.clienstoverviewtitle)
         cy.contains(targets.clienstoverviewtitle)
         cy.percySnapshot('Cliens Overview')
-        clienOverviewFuncs.goToCreateClientPage(cy, targets.createclienttitle)
+        clienOverviewFuncs.goToCreateClientPage(cy)
         cy.percySnapshot('New Client Page')
         newClientFuncs.createNewClient(cy, targets.newClientname, targets.newClientEmail, targets.newClientTelefone, targets.newClientname)
         cy.percySnapshot('Cliens Overview')
-        newClientFuncs.performLogout(cy, targets.indextitlelogin)
+        clienOverviewFuncs.performLogout(cy)
         cy.percySnapshot('Back to Login Page')
     })
 
@@ -114,7 +115,8 @@ describe('Test suite', function(){
         cy.percySnapshot('Bill Overview Page')
         billsOverviewFuncs.goToCreateBillsPage(cy, 'New Bill')
         cy.percySnapshot('New Bill Page')
-        // Create anew Bill & save
+        
+        // Create a new Bill & save
         cy.get('input').type(billValue)  
         cy.get('.checkbox').click()  
         cy.get('.blue').click()
@@ -124,7 +126,7 @@ describe('Test suite', function(){
         cy.get('.user > .btn').click()
         cy.contains('Login')
         cy.percySnapshot('Back to Login Page')
-        
+
     })
 
 })

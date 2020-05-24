@@ -3,10 +3,10 @@ import faker from 'faker'
 
 module.exports = {
     base_url: 'http://localhost:3000',
-    username: 'tester01',
-    password: 'GteteqbQQgSr88SwNExUQv2ydb7xuf8c',    // Test case
-    username2: 'tester02',
-    password2: 'sppm7qncqmVft5uECkwjLcLdEJGzM3Cw',
+    usernamex: 'tester01',
+    passwordx: 'GteteqbQQgSr88SwNExUQv2ydb7xuf8c',    // Test case
+    username: 'tester02',
+    password: 'sppm7qncqmVft5uECkwjLcLdEJGzM3Cw',
 
 
     reservationsoverviewtitle: 'Reservations',

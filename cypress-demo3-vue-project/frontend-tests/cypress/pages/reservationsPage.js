@@ -29,9 +29,9 @@ function goToCreateReservationsPage (cy, contentToConfirm){
     cy.contains(contentToConfirm)
 }
 
-function performLogout (cy, contentToConfirm){
+ffunction performLogout (cy){
     cy.get(logoutButton).click()
-    cy.contains(contentToConfirm)
+    cy.contains('Login')
 }
 
 

@@ -40,9 +40,9 @@ function createRoom (cy, newRoomCategory, newRoomNumber, newFloorNumber, newPric
 }
 
 
-function performLogout (cy, contentToConfirm){
+function performLogout (cy){
     cy.get(logoutButton).click()
-    cy.contains(contentToConfirm)
+    cy.contains('Login')
 }
 
 

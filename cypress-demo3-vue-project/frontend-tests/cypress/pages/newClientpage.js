@@ -19,25 +19,25 @@ function checkTitleOfNewClientsPage(cy){
     cy.title().should('eq', titleOfNewClientsPage)
 }
 
-function goBackToClientOverviewPage (cy, contentToConfirm){
+function goBackToClientOverviewPage (cy){
     cy.get(newClientBackButton).click()
-    cy.contains(contentToConfirm)
+    cy.contains('Clients')
 }
 
 
 
-function createNewClient (cy, newClientName, newClientEmail, newClientTelefone,contentToConfirm){
+function createNewClient (cy, newClientName, newClientEmail, newClientTelefone){
     cy.get(newClientNamefield).type(newClientName)
     cy.get(newClientEmailfield).type(newClientEmail)
     cy.get(newClientTelefonefield).type(newClientTelefone)
     cy.get(newClientsSaveButton).click()
-    cy.contains(contentToConfirm)
+    cy.contains('Clients')
 }
 
 
-function performLogout (cy, contentToConfirm){
-    cy.get(logoutButtonClient).click()
-    cy.contains(contentToConfirm)
+function performLogout (cy){
+    cy.get(logoutButton).click()
+    cy.contains('Login')
 }
 
 
